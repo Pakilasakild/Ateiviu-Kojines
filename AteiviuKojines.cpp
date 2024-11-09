@@ -1,16 +1,19 @@
 #include <iostream>
 #include <locale>
+#include <fstream>
 
 using namespace std;
 int main()
 {
+    ifstream in("U1.txt");
+    ofstream out("U1rez.txt");
     int a, b, sum = 0, c = 0;
     bool flag = false;
-    cin >> a >> b;
+    in >> a >> b;
     int koj[b];
     for (int i = 0; i < b; i++)
     {
-        cin >> koj[i];
+        in >> koj[i];
         if (koj[i] < a)
         {
             sum += koj[i];
@@ -28,11 +31,11 @@ int main()
     }
     if (flag)
     {
-        cout << sum;
+        out << sum;
     }
     else
     {
-        cout << -1;
+        out << -1;
     }
     return 0;
 }
